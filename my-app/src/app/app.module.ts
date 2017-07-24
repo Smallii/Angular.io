@@ -19,7 +19,7 @@ import { ReginForm } from '../pages/regin/regin-form';
     RouterModule.forRoot([
     	{
     		path: '',
-    		redirectTo: '/regin',
+    		redirectTo: '/heroes',
     		pathMatch: 'full'
     	},
 		  {
