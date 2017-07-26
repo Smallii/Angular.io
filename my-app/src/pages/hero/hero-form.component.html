@@ -1,1 +1,9 @@
 <h6>列表页</h6>
+<ul>
+  <li *ngFor="let hero of heroes">{{hero.id}},{{hero.name}},{{hero.nick}}</li>
+</ul>
+
+<label>New hero name: <input #newHeroName /></label>
+<button (click)="addHero(newHeroName.value); newHeroName.value=''">Add Hero</button>
+
+<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
