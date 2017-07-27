@@ -2,7 +2,7 @@ export class Regin {
 
   constructor(
     public name: string,
-    public pwd: string
+    public nick: string
   ) {  }
 
 }

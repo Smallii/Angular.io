@@ -8,6 +8,7 @@ import { HeroService } from './hero.service';
   templateUrl: './hero-form.component.html'
 })
 export class HeroFormComponent implements OnInit{
+	
 	errorMessage: string;
   heroes: Hero[];
   mode = 'Observable';
@@ -24,9 +25,9 @@ export class HeroFormComponent implements OnInit{
   }
   
 
-  addHero(name: string) {
+  addHero(name: string, nick: string) {
     if (!name) { return; }
-    this.heroService.create(name).subscribe(
+    this.heroService.create(name, nick).subscribe(
        hero  => this.heroes.push(hero),
        error => this.errorMessage = <any>error);
   }

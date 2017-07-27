@@ -23,11 +23,11 @@ export class HeroService {
                     
   }
 
-  create(name: string): Observable<Hero> {
+  create(name: string, nick: string): Observable<Hero> {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.post(this.heroesUrladd, { name }, options)
+    return this.http.post(this.heroesUrladd, { name, nick }, options)
                     .map(this.extractData)
                     .catch(this.handleError);
   }
