@@ -23,12 +23,11 @@ export class HeroFormComponent implements OnInit{
     	error => this.errorMessage = <any>error);
     	
   }
-  
-
   addHero(name: string, nick: string) {
     if (!name) { return; }
     this.heroService.create(name, nick).subscribe(
-       hero  => this.heroes.push(hero),
+       heroes  => this.heroes = heroes,
        error => this.errorMessage = <any>error);
   }
+
 }

@@ -23,9 +23,12 @@ export class ReginForm implements OnInit {
   submitted = false;
 
   onSubmit(reginForm:any) {
-  	console.log('输出对象:' +reginForm.name + reginForm.nick);
+  	console.log('输出对象:' +reginForm);
   	this.submitted = true;
   	console.log('继续执行');
+  	this.reginService.create(reginForm.name, reginForm.nick).subscribe(
+       hero  => this.regin = hero,
+       error => this.errorMessage = <any>error);
   }
 
   // TODO: Remove this when we're done

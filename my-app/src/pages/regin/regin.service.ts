@@ -23,10 +23,10 @@ export class ReginService {
                     
   }
 
-  create(name: string, nick: string): Observable<Regin> {
+  create(name: string, nick: string): Observable<Regin[]> {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-
+	console.log('name:' + name + 'nick:' + nick);
     return this.http.post(this.heroesUrladd, { name, nick }, options)
                     .map(this.extractData)
                     .catch(this.handleError);

@@ -1,7 +1,15 @@
-<h6>列表页</h6>
-<ul>
-  <li *ngFor="let hero of heroes">{{hero.id}},{{hero.name}},{{hero.nick}}</li>
-</ul>
+<table class="table table-hover table-responsive">
+  <tr>
+  	<th>ID</th>
+  	<th>Name</th>
+  	<th>Nick</th>
+  </tr>
+  <tr *ngFor="let hero of heroes">
+  	<td>{{hero.id}}</td>
+  	<td>{{hero.name}}</td>
+  	<td>{{hero.nick}}</td>
+  </tr>
+</table>
 
 <label>New name: <input #newHeroName /></label>
 <label>New nick: <input #newHeroNick /></label>
