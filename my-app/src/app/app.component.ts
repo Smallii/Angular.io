@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
 	errorMessage: string;
   captions: Captions[];
   mode = 'Observable';
-
+  
   constructor (private appService: AppService) {}
 
   ngOnInit() { this.getCaptions(); }
