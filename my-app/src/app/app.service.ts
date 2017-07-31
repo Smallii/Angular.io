@@ -25,7 +25,6 @@ export class AppService {
 
 	private extractData(res: Response) {
 	    let body = res.json();
-	    console.log('图片列表:' + body);
 	    return body || { };
  }	
 
