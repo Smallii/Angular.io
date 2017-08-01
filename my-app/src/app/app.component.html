@@ -31,7 +31,9 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<router-outlet></router-outlet>
+<main [@routerTransition]="getState(o)">
+	<router-outlet #o="outlet"></router-outlet>
+</main>
 
 <!-- 
 <div style="text-align:center">

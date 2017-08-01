@@ -22,6 +22,7 @@ import { requestOptionsProvider }   from './default-request-options.service';
     FormsModule,
     HttpModule,
     JsonpModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([
     	{
     		path: '',
@@ -30,11 +31,13 @@ import { requestOptionsProvider }   from './default-request-options.service';
     	},
 		  {
 		    path: 'heroes',
-		    component: HeroFormComponent
+		    component: HeroFormComponent,
+		    data: { state: 'heroes'}
 		  },
 		  {
 		  	path: 'regin',
-		  	component: ReginForm
+		  	component: ReginForm,
+		  	data: { state: 'regin'}
 		  }
 		])
   ],
