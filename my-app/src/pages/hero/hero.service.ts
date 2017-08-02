@@ -16,8 +16,8 @@ export class HeroService {
 
   constructor (private http: Http) {}
 
-  getHeroes(): Observable<Hero[]> {
-    return this.http.get(this.heroesUrl)
+  getHeroes(page: number, size: number): Observable<Hero[]> {
+    return this.http.get(this.heroesUrl+'?page='+ page +'&size='+ size)
                     .map(this.extractData)
                     .catch(this.handleError);
                     
@@ -34,9 +34,9 @@ export class HeroService {
 
 	private extractData(res: Response) {
 	    let body = res.json();
-	    console.log(body.length);
+	    console.log(body);
 	    return body || { };
- }	
+ 	}	
 
   private handleError (error: Response | any) {
     // In a real world app, you might use a remote logging infrastructure

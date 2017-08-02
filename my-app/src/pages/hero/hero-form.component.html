@@ -4,12 +4,20 @@
   	<th>Name</th>
   	<th>Nick</th>
   </tr>
-  <tr *ngFor="let hero of heroes; let i=index">
+  <tr *ngFor="let hero of heroes.content; let i=index">
   	<td>{{i + 1}}</td>
   	<td>{{hero.name}}</td>
   	<td>{{hero.nick}}</td>
   </tr>
 </table>
+
+<nav aria-label="Page navigation">
+  <ul class="pager">
+  	<li>总页数:{{heroes.totalPages}}</li>
+    <li><a (click)="getHeroes(heroes.number - 1, 10, heroes.totalPages);"><span aria-hidden="true">&larr;</span> Previous</a></li>
+    <li><a (click)="getHeroes(heroes.number + 1, 10, heroes.totalPages);">Next <span aria-hidden="true">&rarr;</span></a></li>
+  </ul>
+</nav>
 
 <label>New name: <input #newHeroName /></label>
 <label>New nick: <input #newHeroNick /></label>
