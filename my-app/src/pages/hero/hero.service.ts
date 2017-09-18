@@ -10,9 +10,9 @@ import { Hero } from './hero';
 @Injectable()
 export class HeroService {
 	
-  private heroesUrl = 'http://192.168.1.18:8080/findAll';  // URL to web API
+  private heroesUrl = 'http://192.168.1.123:8080/findAll';  // URL to web API
   
-  private heroesUrladd = 'http://192.168.1.18:8080/save';
+  private heroesUrladd = 'http://192.168.1.123:8080/save';
 
   constructor (private http: Http) {}
 

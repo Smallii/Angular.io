@@ -8,6 +8,8 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HeroFormComponent } from '../pages/hero/hero-form.component';
 import { ReginForm } from '../pages/regin/regin-form';
+//导入用户模块
+import { UserInfoController } from '../pages/user/userinfo.controller';
 
 import { requestOptionsProvider }   from './default-request-options.service';
 
@@ -15,7 +17,8 @@ import { requestOptionsProvider }   from './default-request-options.service';
   declarations: [
     AppComponent,
     HeroFormComponent,
-    ReginForm
+    ReginForm,
+    UserInfoController
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,11 @@ import { requestOptionsProvider }   from './default-request-options.service';
 		  	path: 'regin',
 		  	component: ReginForm,
 		  	data: { state: 'regin'}
+		  },
+		  {
+		  	path: 'user',
+		  	component: UserInfoController,
+		  	data: { state: 'user'}
 		  }
 		])
   ],

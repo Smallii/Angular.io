@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+//导航
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Hero } from './hero';
 import { HeroService } from './hero.service';
 
@@ -17,7 +19,10 @@ export class HeroFormComponent implements OnInit{
   size = 10;
   totalPages = 1;
 
-  constructor (private heroService: HeroService) {}
+  constructor (
+  	private heroService: HeroService,
+  	private router: Router
+  ) {}
 
   ngOnInit() { this.getHeroes(this.page, this.size, this.totalPages); }
   
@@ -36,6 +41,11 @@ export class HeroFormComponent implements OnInit{
     this.heroService.create(name, nick).subscribe(
        heroes  => this.heroes = heroes,
        error => this.errorMessage = <any>error);
+  }
+  
+  //导航跳转
+	onSelect() {
+		this.router.navigate(['/user',]);
   }
 
 }
